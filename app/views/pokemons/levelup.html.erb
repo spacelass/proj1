@@ -1,0 +1,5 @@
+<h3>Choose Pokemon for battle!</h3>
+<%= form_tag levelup(@pokemon), :class => "level-a-poke" do  %>
+   <%= select_tag(:id, options_from_collection_for_select(current_trainer.pokemons.all, :include_blank => false, :required => true, :class => 'select')) %>
+   <%= button_tag 'Select', class: 'button small', data: {disable_with: "<i class='icon-spinner'></i>Processing..."} %>
+   <% end %>
